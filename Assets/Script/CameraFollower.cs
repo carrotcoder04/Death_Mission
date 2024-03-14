@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class CameraFollower : MonoBehaviour
+public class CameraFollower : Singleton<CameraFollower>
 {
     public Transform TF;
     [SerializeField] Vector3 offset;
@@ -28,7 +25,7 @@ public class CameraFollower : MonoBehaviour
         weaponTF.rotation = rotation;
         if (distance<2.5f)
         {
-            TF.position = Vector3.Lerp(TF.position, worldPosition + offset, Time.deltaTime * 1f);
+            TF.position = Vector3.Lerp(TF.position, worldPosition + offset, Time.deltaTime * 0.6f);
         }
         if (worldPosition.x < playerTF.position.x)
         {
@@ -39,4 +36,5 @@ public class CameraFollower : MonoBehaviour
             playerTF.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
+    
 }

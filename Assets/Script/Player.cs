@@ -1,18 +1,9 @@
-using MarchingBytes;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 public class Player : Character
 {
     [SerializeField] GameObject player;
-    [SerializeField] Transform firepos;
-    [SerializeField] GameObject bullet;
-    [SerializeField] GameObject bulletparent;
-    private float maxfireTime = 0.2f;
-    private float firetime = 0;
     private Transform playerTF;
-    private float speed = 1f;
+    private float speed = 1.1f;
     private bool isRunning = false;
     void Start()
     {
@@ -22,58 +13,65 @@ public class Player : Character
     void Update()
     {
         Move();
-        firetime += Time.deltaTime;
-        if(Input.GetMouseButton(0) && firetime > maxfireTime)
-        {
-            StartCoroutine(Fire());
-            firetime = 0;
-        }
     }
-
-    IEnumerator Fire()
-    {
-        bulletparent.SetActive(true);
-        Vector3 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        target.z = 0;
-        Vector3 direct = (target - firepos.transform.position).normalized;
-        GameObject bullettmp = EasyObjectPool.instance.GetObjectFromPool("Bullet",firepos.transform.position,firepos.rotation);
-        Rigidbody2D rb  = bullettmp.GetComponent<Rigidbody2D>();
-        rb.AddForce(direct*5f,ForceMode2D.Impulse);
-        yield return new WaitForSeconds(0.5f);
-        bulletparent.SetActive(false);
-        bullettmp.SetActive(false);
-        EasyObjectPool.instance.ReturnObjectToPool(bullettmp);
-        StopCoroutine(Fire());
-    }
-
+    //void Move()
+    //{
+    //    Vector3 direct;
+    //    if(Input.GetKey(KeyCode.W))
+    //    {
+    //        direct = new Vector2(0, 1) * speed * Time.deltaTime;
+    //        playerTF.position += direct;
+    //        isRunning = true;
+    //    }
+    //    if (Input.GetKey(KeyCode.S))
+    //    {
+    //        direct = new Vector2(0, -1) * speed * Time.deltaTime;
+    //        playerTF.position += direct;
+    //        isRunning = true;
+    //    }
+    //    if (Input.GetKey(KeyCode.D))
+    //    {
+    //        direct = new Vector2(1, 0) * speed * Time.deltaTime;
+    //        playerTF.position += direct;
+    //        isRunning = true;
+    //    }
+    //    if (Input.GetKey(KeyCode.A))
+    //    {
+    //        direct = new Vector2(-1, 0) * speed * Time.deltaTime;
+    //        playerTF.position += direct;
+    //        isRunning = true;
+    //    }
+    //    if (isRunning)
+    //    {
+    //        ChangeAnim("Run");
+    //    }
+    //    else
+    //    {
+    //        ChangeAnim("Idle");
+    //    }
+    //    isRunning = false;
+    //}
     void Move()
     {
-        Vector3 direct;
-        if(Input.GetKey(KeyCode.W))
-        {
-            direct = new Vector2(0, 1) * speed * Time.deltaTime;
-            playerTF.position += direct;
-            isRunning = true;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            direct = new Vector2(0, -1) * speed * Time.deltaTime;
-            playerTF.position += direct;
-            isRunning = true;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            direct = new Vector2(1, 0) * speed * Time.deltaTime;
-            playerTF.position += direct;
-            isRunning = true;
-        }
+        int moveHorizontal = 0;
+        int moveVertical = 0;
         if (Input.GetKey(KeyCode.A))
+            moveHorizontal = -1;
+        else if (Input.GetKey(KeyCode.D))
+            moveHorizontal = 1;
+        if (Input.GetKey(KeyCode.W))
+            moveVertical = 1;
+        else if (Input.GetKey(KeyCode.S))
+            moveVertical = -1;
+        if (moveHorizontal != 0 || moveVertical!=0)
         {
-            direct = new Vector2(-1, 0) * speed * Time.deltaTime;
-            playerTF.position += direct;
             isRunning = true;
         }
-        if (isRunning)
+        else
+        {
+            isRunning = false;
+        }
+        if(isRunning)
         {
             ChangeAnim("Run");
         }
@@ -81,6 +79,7 @@ public class Player : Character
         {
             ChangeAnim("Idle");
         }
-        isRunning = false;
+        Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0).normalized * speed * Time.deltaTime;
+        transform.position += movement;
     }
 }

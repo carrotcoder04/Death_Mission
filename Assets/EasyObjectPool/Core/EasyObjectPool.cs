@@ -4,12 +4,12 @@
  * contact@marchingbytes.com
  */
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
-namespace MarchingBytes {
+namespace MarchingBytes
+{
 
-	[System.Serializable]
+    [System.Serializable]
 	public class PoolInfo {
 		public string poolName;
 		public GameObject prefab;
@@ -63,7 +63,7 @@ namespace MarchingBytes {
 			} else if(fixedSize == false) {
 				//increment size var, this is for info purpose only
 				poolSize++;
-				Debug.Log(string.Format("Growing pool {0}. New size: {1}",poolName,poolSize));
+				//Debug.Log(string.Format("Growing pool {0}. New size: {1}",poolName,poolSize));
 				//create new object
 				po = NewObjectInstance();
 			} else {
@@ -123,7 +123,8 @@ namespace MarchingBytes {
 			CheckForDuplicatePoolNames();
 			//create pools
 			CreatePools();
-		}
+
+        }
 		
 		private void CheckForDuplicatePoolNames() {
 			for (int index = 0; index < poolInfo.Length; index++) {
@@ -146,7 +147,7 @@ namespace MarchingBytes {
 				                     currentPoolInfo.poolSize, currentPoolInfo.fixedSize);
 
 				
-				Debug.Log("Creating pool: " + currentPoolInfo.poolName);
+				//Debug.Log("Creating pool: " + currentPoolInfo.poolName);
 				//add to mapping dict
 				poolDictionary[currentPoolInfo.poolName] = pool;
 			}
