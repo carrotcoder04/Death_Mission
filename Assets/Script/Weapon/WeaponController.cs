@@ -10,10 +10,13 @@ public class WeaponController : MonoBehaviour
     [SerializeField] List<Sprite> spritesGun = new List<Sprite>();
     int index = 0;
     bool isChoosing = false;
+    float time = 0;
     void Update()
     {
+        time += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Q) && !isChoosing)
         {
+            time = -0.2f;
             isChoosing = true;
             weaponSprite.sprite = spritesWeapon[index];
             chooseWeapon.SetActive(true);
@@ -30,19 +33,11 @@ public class WeaponController : MonoBehaviour
             }
             weaponSprite.sprite = spritesWeapon[index];
         }
-        if (Input.GetKeyDown(KeyCode.C) && isChoosing)
+        if (Input.GetKeyDown(KeyCode.Q) && isChoosing && time > 0)
         {
             isChoosing = false;
             gun.sprite = spritesGun[index];
             BulletController.Instance.indexgun = index;
-            if(index == 0)
-            {
-                BulletController.Instance.maxfireTime = 0.3f;
-            } 
-            else if(index == 1)
-            {
-                BulletController.Instance.maxfireTime = 0.2f;
-            }
             chooseWeapon.SetActive(false);
         }
     }

@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5579619234220146463
 Transform:
   m_ObjectHideFlags: 0
@@ -123,7 +123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2759745966732215640
 Transform:
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2986403642077777626
 Transform:
   m_ObjectHideFlags: 0
@@ -331,9 +331,10 @@ GameObject:
   - component: {fileID: 2085151345049423904}
   - component: {fileID: 3749590865185052712}
   - component: {fileID: 704667504524400478}
+  - component: {fileID: 2190365305100428773}
   m_Layer: 0
   m_Name: BulletRevolve
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -496,6 +497,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletHit: {fileID: 8393565348676102976}
+--- !u!114 &2190365305100428773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5561358559103547841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959fd603b29e6e64390dcacd4c453d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trail:
+  - {fileID: 1936818407462821914}
+  - {fileID: 4443021085513350583}
+  - {fileID: 3724692131031324532}
+  - {fileID: 7840649815874772443}
+  - {fileID: 8681969405144325771}
 --- !u!1 &7840649815874772443
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &584829501380859453
 Transform:
   m_ObjectHideFlags: 0
@@ -725,7 +744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8586883457275033122
 Transform:
   m_ObjectHideFlags: 0

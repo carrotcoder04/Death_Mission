@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indexgun: 0
-  maxfireTime: 0.3
   maxslashTime: 0.2
   firepos: {fileID: 1774559277}
   _firepos: {fileID: 475476000}
@@ -3772,7 +3771,7 @@ GameObject:
   - component: {fileID: 765778843}
   m_Layer: 0
   m_Name: Slash
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6825,6 +6824,7 @@ GameObject:
   - component: {fileID: 1019890160}
   - component: {fileID: 1019890162}
   - component: {fileID: 1019890161}
+  - component: {fileID: 1019890163}
   m_Layer: 0
   m_Name: Gate
   m_TagString: Untagged
@@ -6887,7 +6887,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -7
+  m_SortingOrder: 10
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -7094,6 +7094,42 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1019890163
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019890159}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1001 &1032008463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15306,12 +15342,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolInfo:
-  - poolName: BulletRevolve
+  - poolName: BulletRevolver
     prefab: {fileID: 5561358559103547841, guid: 2d859152c8f2fdb40a94effc3532bfa5, type: 3}
     poolSize: 0
     fixedSize: 0
-  - poolName: BulletSprite
+  - poolName: BulletRevolverSprite
     prefab: {fileID: 130690125737437641, guid: 9921f9b772d8d5448a3a4c16f9a912b9, type: 3}
+    poolSize: 0
+    fixedSize: 0
+  - poolName: BulletShotgun
+    prefab: {fileID: 7523864652581491873, guid: 5f5f930e317ad6a49ba539232e191193, type: 3}
+    poolSize: 0
+    fixedSize: 0
+  - poolName: BulletShotgunSprite
+    prefab: {fileID: 2680714193971802931, guid: c28af2c2fa0bb3649b94923161fc8c5e, type: 3}
     poolSize: 0
     fixedSize: 0
 --- !u!4 &1649494226
@@ -16290,7 +16334,7 @@ Transform:
   m_GameObject: {fileID: 1774559276}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.425, y: 0.032, z: 0}
+  m_LocalPosition: {x: 0.078, y: 0.032, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
