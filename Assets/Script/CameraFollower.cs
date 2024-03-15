@@ -12,10 +12,10 @@ public class CameraFollower : Singleton<CameraFollower>
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         worldPosition.z = 0;
         Vector3 direction = worldPosition - playerTF.position;
-        float distance = Mathf.Sqrt(Mathf.Pow(direction.x,2) + Mathf.Pow(direction.y,2));
+        float distance = Mathf.Sqrt(Mathf.Pow(direction.x, 2) + Mathf.Pow(direction.y, 2));
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.Euler(0, 0, angle);
-        if(rotation.eulerAngles.z > 90 && rotation.eulerAngles.z < 270)
+        if (rotation.eulerAngles.z > 90 && rotation.eulerAngles.z < 270)
         {
             weaponTF.localScale = new Vector3(1, -1, 1);
         }
@@ -24,7 +24,7 @@ public class CameraFollower : Singleton<CameraFollower>
             weaponTF.localScale = Vector3.one;
         }
         weaponTF.rotation = rotation;
-        if (distance<2.4f)
+        if (distance < 2.4f)
         {
             TF.position = Vector3.Lerp(TF.position, worldPosition + offset, Time.deltaTime * 0.6f);
         }
@@ -37,18 +37,16 @@ public class CameraFollower : Singleton<CameraFollower>
             playerTF.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
-    public void CameraShake(float x,float y)
+    public void CameraShake(float x, float y)
     {
-        StartCoroutine(Shake(x,y));
+        StartCoroutine(Shake(x, y));
     }
-    IEnumerator Shake(float x,float y)
+    IEnumerator Shake(float x, float y)
     {
-        lock(TF)
-        {
-            Vector3 prevpos = TF.position;
-            TF.position = Vector3.Lerp(TF.position, TF.position + new Vector3(x, y), 1);
-            yield return new WaitForSeconds(0.1f);
-            TF.position = Vector3.Lerp(TF.position, prevpos, 0.5f);
-        }
+        Vector3 prevpos = TF.position;
+        TF.position = Vector3.Lerp(TF.position, TF.position + new Vector3(x, y), 1);
+        yield return new WaitForSeconds(0.1f);
+        TF.position = Vector3.Lerp(TF.position, prevpos, 0.2f);
     }
+
 }

@@ -1,35 +1,40 @@
+using MarchingBytes;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     [SerializeField] GameObject bulletHit;
     Rigidbody2D rb;
-    BoxCollider2D box;
     SpriteRenderer sprite;
+    public bool isHit = false;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        box = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
     }
     private void OnDisable()
     {
+        isHit = false;
         bulletHit.SetActive(false);
-        box.enabled = true;
         sprite.enabled = true;
+        EasyObjectPool.instance.ReturnObjectToPool(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag != "Player" && collision.tag != "Weapon")
         {
-            StartCoroutine(CollisonHanding());
+            if(!isHit)
+            {
+                isHit = true;
+                StartCoroutine(CollisionHanding());
+            }
         }
     }
-    IEnumerator CollisonHanding()
+    IEnumerator CollisionHanding()
     {
         bulletHit.SetActive(true);
-        box.enabled = false;
         sprite.enabled = false;
         yield return new WaitForSeconds(0.05f);
         rb.velocity = Vector3.zero;

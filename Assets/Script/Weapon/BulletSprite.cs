@@ -10,6 +10,10 @@ public class BulletSprite : MonoBehaviour
     {
         StartCoroutine(ChangeSprite());
     }
+    private void OnDisable()
+    {
+        EasyObjectPool.instance.ReturnObjectToPool(gameObject);
+    }
     IEnumerator ChangeSprite()
     {
         yield return new WaitForSeconds(1f);
@@ -29,6 +33,5 @@ public class BulletSprite : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         render.sprite = bullet;
         gameObject.SetActive(false);
-        EasyObjectPool.instance.ReturnObjectToPool(gameObject);
     }
 }
