@@ -48,10 +48,10 @@ public class BulletController : Singleton<BulletController>
         {
             CameraFollower.Instance.CameraShake(0f, 0.02f);
         }
-        else if(indexgun == 0 || indexgun == 1)
-        {
-            CameraFollower.Instance.CameraShake(0f, 0.008f);
-        }
+        //else if(indexgun == 0 || indexgun == 1)
+        //{
+        //   // CameraFollower.Instance.CameraShake(0f, 0.008f);
+        //}
         else if (indexgun == 3 || indexgun == 4)
         {
             CameraFollower.Instance.CameraShake(0f, 0.04f);

@@ -9,14 +9,17 @@ public class Rocket : MonoBehaviour
     [SerializeField] List<GameObject> hit = new List<GameObject>();
     [SerializeField] GameObject explosion;
     Rigidbody2D rb;
+    SpriteRenderer sprite;
     public bool isHit = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
     private void OnDisable()
     {
         isHit = false;
+        sprite.enabled = true;
         for (int i = 0; i < hit.Count; i++)
         {
             hit[i].SetActive(false);
@@ -42,7 +45,6 @@ public class Rocket : MonoBehaviour
             if(!isHit)
             {
                 isHit = true;
-                Debug.Log("Hit " + collision.gameObject.name);
                 StartCoroutine(Boom());
             }
         }
@@ -50,6 +52,7 @@ public class Rocket : MonoBehaviour
     public IEnumerator Boom()
     {
         rb.velocity = Vector2.zero;
+        sprite.enabled = false;
         explosion.SetActive(true);
         CameraFollower.Instance.CameraShake(0f, 0.04f);
         yield return new WaitForSeconds(0.4f);

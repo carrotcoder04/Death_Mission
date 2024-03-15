@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class Player : Character
 {
     [SerializeField] GameObject player;
@@ -13,6 +15,10 @@ public class Player : Character
     void Update()
     {
         Move();
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            GameController.Instance.LoadSceen(3);
+        }
     }
     //void Move()
     //{
