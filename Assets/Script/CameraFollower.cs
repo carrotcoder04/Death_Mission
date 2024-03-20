@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-
+using DG.Tweening;
 public class CameraFollower : Singleton<CameraFollower>
 {
     public Transform TF;
@@ -37,16 +37,8 @@ public class CameraFollower : Singleton<CameraFollower>
             playerTF.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
-    public void CameraShake(float x, float y)
+    public void CameraShake(float power)
     {
-        StartCoroutine(Shake(x, y));
+        TF.DOShakePosition(0.02f,power,1,50,false,true);
     }
-    IEnumerator Shake(float x, float y)
-    {
-        Vector3 prevpos = TF.position;
-        TF.position = Vector3.Lerp(TF.position, TF.position + new Vector3(x, y), 1);
-        yield return new WaitForSeconds(0.1f);
-        TF.position = Vector3.Lerp(TF.position, prevpos, 0.2f);
-    }
-
 }

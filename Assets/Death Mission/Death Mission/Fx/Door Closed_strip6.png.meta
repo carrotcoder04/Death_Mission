@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,7 +134,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Door Closed_strip6_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 9
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 311776e10a256f0448fb5d2f77696332
+      internalID: -293969196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door Closed_strip6_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 9
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60417205a1a9ce944b890f5511120221
+      internalID: -55868383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door Closed_strip6_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 9
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e77309426e62754a9edb236f73ebc22
+      internalID: -644154201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door Closed_strip6_3
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 9
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb0a6a134a846ea4c8ed68ad61481a9e
+      internalID: 743778184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door Closed_strip6_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 9
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab1cc521215cdc4faf82f0238bbdaa1
+      internalID: 630818976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door Closed_strip6_5
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 0
+        width: 9
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ebfbb48f12e0b546b7e32c18c3346e5
+      internalID: 17561092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +271,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Door Closed_strip6_0: -293969196
+      Door Closed_strip6_1: -55868383
+      Door Closed_strip6_2: -644154201
+      Door Closed_strip6_3: 743778184
+      Door Closed_strip6_4: 630818976
+      Door Closed_strip6_5: 17561092
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

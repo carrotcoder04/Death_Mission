@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4077661553594513895}
   - component: {fileID: 5204811278960259354}
   - component: {fileID: 2583831735843525467}
-  m_Layer: 0
+  - component: {fileID: 3065151714704121764}
+  m_Layer: 9
   m_Name: Explosion
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -142,6 +143,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.24
+--- !u!114 &3065151714704121764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90641007413040966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b101ac5526c6949b1dbf9cb4015fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6063935422456976181
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +169,7 @@ GameObject:
   - component: {fileID: 4520615895225892295}
   - component: {fileID: 5843660436349989315}
   - component: {fileID: 7882968645299381273}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grenade
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -240,7 +253,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 6063935422456976181}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9a1d7c2951cdf3241896e0548d33d670, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

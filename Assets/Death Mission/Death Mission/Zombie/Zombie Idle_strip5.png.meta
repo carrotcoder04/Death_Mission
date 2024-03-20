@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,7 +134,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Zombie Idle_strip5_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a0cf0dffb2b5c48b90cb45d8c47e99
+      internalID: 193997275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Idle_strip5_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04002c8e0bdefc3479a549194c4c3c50
+      internalID: 1541731903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Idle_strip5_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e79055dc7c683a24f849776b5cac1e5b
+      internalID: -955774593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Idle_strip5_3
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9bbc292f574dd43aa90f6dfc14a2ab
+      internalID: 815540343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Idle_strip5_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30358a5ffd19dd47bb53379ab52984d
+      internalID: 2042496767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +250,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Zombie Idle_strip5_0: 193997275
+      Zombie Idle_strip5_1: 1541731903
+      Zombie Idle_strip5_2: -955774593
+      Zombie Idle_strip5_3: 815540343
+      Zombie Idle_strip5_4: 2042496767
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

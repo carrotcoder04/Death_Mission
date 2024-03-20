@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class GameController : Singleton<GameController>
 {
@@ -9,10 +12,9 @@ public class GameController : Singleton<GameController>
     [SerializeField] Transform cam;
     [SerializeField] GameObject loading;
     [SerializeField] GameObject tittle;
-    [SerializeField] GameObject fade;
     [SerializeField] GameObject background;
-    [SerializeField] Animator animatorFade;
     [SerializeField] CameraFollower camfollow;
+    [SerializeField] CanvasGroup fade;
     private int currentSceen = 3;
     private void Awake()
     {
@@ -27,28 +29,37 @@ public class GameController : Singleton<GameController>
         background.SetActive(false);
         LoadSceen(0);
     }
-    
+    public void FadeIn()
+    {
+        fade.alpha = 0f;
+        fade.DOFade(1, 1);
+    }
+    public void FadeOut()
+    {
+        fade.DOFade(0, 1);
+    }
     private IEnumerator LoadTittleAndMenu()
     {
         cam.transform.position = sceen[3].transform.position + new Vector3(0,0,-10);
         tittle.SetActive(true);
         yield return new WaitForSeconds(1.5f);
-        fade.SetActive(true);
+        FadeIn();
         yield return new WaitForSeconds(1f);
+        FadeOut();
         tittle.SetActive(false);
-        animatorFade.SetTrigger("End");
         sceen[3].SetActive(true);
         yield return new WaitForSeconds(1f);
-        fade.SetActive(false);
+        yield break;
     }
     IEnumerator Loading(int id)
     {
+        FadeIn();
+        yield return new WaitForSeconds(1f);
         int lastsceen = currentSceen;
         if (currentSceen == 3)
         {
             sceen[currentSceen].SetActive(false);
             camfollow.enabled = true;
-            yield return new WaitForSeconds(0.5f);
             background.SetActive(false);
         }
         else
@@ -64,6 +75,7 @@ public class GameController : Singleton<GameController>
         {
             sceen[lastsceen].SetActive(false);
         }
+        fade.alpha = 0;
         lock (cam)
         {
             lock(player.transform)
@@ -80,5 +92,9 @@ public class GameController : Singleton<GameController>
         {
             background.SetActive(true);
         }
+        fade.alpha = 1;
+        FadeOut();
+        yield return new WaitForSeconds(1f);
+        yield break;
     }
 }

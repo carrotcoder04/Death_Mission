@@ -8,14 +8,17 @@ public class Grenade : MonoBehaviour
 {
     [SerializeField] GameObject explosion;
     Rigidbody2D rb;
+    SpriteRenderer sprite;
     public bool isHit = false;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
     private void OnDisable()
     {
         isHit = false;
+        sprite.enabled = true;
         EasyObjectPool.instance.ReturnObjectToPool(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,10 +36,12 @@ public class Grenade : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(0.4f);
+        sprite.enabled = false;
         explosion.SetActive(true);
-        CameraFollower.Instance.CameraShake(0f, 0.04f);
+        CameraFollower.Instance.CameraShake(0.15f);
         yield return new WaitForSeconds(0.4f);
         explosion.SetActive(false);
         gameObject.SetActive(false);
+        yield break;
     }
 }

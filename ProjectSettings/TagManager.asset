@@ -5,17 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - Weapon
+  - Zombie
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstacle
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Zombie
+  - Player
+  - SearchRange
+  - Bullet
   - 
   - 
   - 

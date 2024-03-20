@@ -33,5 +33,6 @@ public class BulletSprite : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         render.sprite = bullet;
         gameObject.SetActive(false);
+        yield break;
     }
 }

@@ -33,6 +33,7 @@ public class BulletShotgun : MonoBehaviour
         ChangeAnim("Disappear");
         yield return new WaitForSeconds(0.25f);
         gameObject.SetActive(false);
+        yield break;
     }
     protected void ChangeAnim(string animName)
     {
@@ -50,17 +51,18 @@ public class BulletShotgun : MonoBehaviour
             if (!isHit)
             {
                 isHit = true;
-                StartCoroutine(CollisionHanding());
+                StartCoroutine(CollisionHandling());
             }
         }
     }
-    IEnumerator CollisionHanding()
+    IEnumerator CollisionHandling()
     {
         sprite.enabled = false;
         bulletHit.SetActive(true);
         yield return new WaitForSeconds(0.05f);
-        rb.velocity = Vector3.zero;
+        rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(0.25f);
         gameObject.SetActive(false);
+        yield break;
     }
 }

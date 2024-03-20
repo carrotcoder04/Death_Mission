@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,7 +134,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Door Open_strip6_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 9
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bee0761d88d1df44c9377d6cf1dc0b91
+      internalID: 1160948196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door Open_strip6_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 9
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7d4813f23f88a4e948f52299c8e7a1
+      internalID: -1221414302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door Open_strip6_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 9
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3d9a76c07396e4bbacc366652e2023
+      internalID: -766103978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door Open_strip6_3
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 9
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: add0ec12080168f4cb70bb55da6fc42f
+      internalID: -1719804045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door Open_strip6_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 9
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d270d593d86f21f4893e6dc6d4040838
+      internalID: -959741519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door Open_strip6_5
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 0
+        width: 9
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c113be67d182a44b54489ead80429f
+      internalID: -1409976454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +271,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Door Open_strip6_0: 1160948196
+      Door Open_strip6_1: -1221414302
+      Door Open_strip6_2: -766103978
+      Door Open_strip6_3: -1719804045
+      Door Open_strip6_4: -959741519
+      Door Open_strip6_5: -1409976454
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

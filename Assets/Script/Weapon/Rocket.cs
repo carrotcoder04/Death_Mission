@@ -32,11 +32,12 @@ public class Rocket : MonoBehaviour
     }
     IEnumerator Appear()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         for (int i = 0; i < hit.Count; i++)
         {
             hit[i].SetActive(true);
         }
+        yield break;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -54,9 +55,10 @@ public class Rocket : MonoBehaviour
         rb.velocity = Vector2.zero;
         sprite.enabled = false;
         explosion.SetActive(true);
-        CameraFollower.Instance.CameraShake(0f, 0.04f);
+        CameraFollower.Instance.CameraShake(0.15f);
         yield return new WaitForSeconds(0.4f);
         explosion.SetActive(false);
         gameObject.SetActive(false);
+        yield break;
     }
 }

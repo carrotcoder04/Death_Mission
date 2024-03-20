@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,7 +134,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Zombie Walk_strip6_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b1104a1c98a0449bac632a2b206a8f
+      internalID: 1288740962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Walk_strip6_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f4788c8b1d87147a131b520edc531d
+      internalID: -1461270291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Walk_strip6_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e03f359ad530554b8d0c6924ddee4fc
+      internalID: 605100279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Walk_strip6_3
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd0328ac9dcde942a1830757df7f2cf
+      internalID: -713274903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Walk_strip6_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e7c90f94258894bb8128ce71d1d686
+      internalID: -1187427423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Walk_strip6_5
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca91fe62ee68d8499aa395aba024a20
+      internalID: -1576184592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +271,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Zombie Walk_strip6_0: 1288740962
+      Zombie Walk_strip6_1: -1461270291
+      Zombie Walk_strip6_2: 605100279
+      Zombie Walk_strip6_3: -713274903
+      Zombie Walk_strip6_4: -1187427423
+      Zombie Walk_strip6_5: -1576184592
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

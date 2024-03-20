@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class Player : Character
@@ -7,56 +9,36 @@ public class Player : Character
     private Transform playerTF;
     private float speed = 1.1f;
     private bool isRunning = false;
+    private void OnDisable()
+    {
+        ResetCharacter();
+        ChangeAnim("Idle");
+    }
     void Start()
     {
         playerTF = player.transform;
-        OnInit();
+        OnInit(100);
     }
     void Update()
     {
-        Move();
-        if(Input.GetKeyUp(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
-            GameController.Instance.LoadSceen(3);
+            
         }
+        if (isDead)
+        {
+            return;
+        }
+        if (isHurting)
+        {
+            return;
+        }
+        Move();
     }
-    //void Move()
-    //{
-    //    Vector3 direct;
-    //    if(Input.GetKey(KeyCode.W))
-    //    {
-    //        direct = new Vector2(0, 1) * speed * Time.deltaTime;
-    //        playerTF.position += direct;
-    //        isRunning = true;
-    //    }
-    //    if (Input.GetKey(KeyCode.S))
-    //    {
-    //        direct = new Vector2(0, -1) * speed * Time.deltaTime;
-    //        playerTF.position += direct;
-    //        isRunning = true;
-    //    }
-    //    if (Input.GetKey(KeyCode.D))
-    //    {
-    //        direct = new Vector2(1, 0) * speed * Time.deltaTime;
-    //        playerTF.position += direct;
-    //        isRunning = true;
-    //    }
-    //    if (Input.GetKey(KeyCode.A))
-    //    {
-    //        direct = new Vector2(-1, 0) * speed * Time.deltaTime;
-    //        playerTF.position += direct;
-    //        isRunning = true;
-    //    }
-    //    if (isRunning)
-    //    {
-    //        ChangeAnim("Run");
-    //    }
-    //    else
-    //    {
-    //        ChangeAnim("Idle");
-    //    }
-    //    isRunning = false;
-    //}
+    void Show(int t)
+    {
+        Debug.Log(t);
+    }
     void Move()
     {
         int moveHorizontal = 0;
@@ -87,5 +69,14 @@ public class Player : Character
         }
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0).normalized * speed * Time.deltaTime;
         transform.position += movement;
+    }
+    protected override void OnDeath()
+    {
+        base.OnDeath();
+        BulletController.Instance.isDead = isDead;
+    }
+    protected override void OnHurting(float damage)
+    {
+        base.OnHurting(damage);
     }
 }

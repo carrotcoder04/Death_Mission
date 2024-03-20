@@ -1,44 +1,29 @@
-using MarchingBytes;
+using DG.Tweening;
 using System.Collections;
-using TMPro;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] GameObject bulletHit;
-    Rigidbody2D rb;
-    SpriteRenderer sprite;
-    public bool isHit = false;
-    private void Start()
+    protected float damage;
+    protected void OnInit(float damge)
     {
-        rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
+        this.damage = damge;
     }
-    private void OnDisable()
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
-        isHit = false;
-        bulletHit.SetActive(false);
-        sprite.enabled = true;
-        EasyObjectPool.instance.ReturnObjectToPool(gameObject);
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag != "Player" && collision.tag != "Weapon")
+        if (collision.tag == "Zombie")
         {
-            if(!isHit)
-            {
-                isHit = true;
-                StartCoroutine(CollisionHanding());
-            }
+            Bot bot = collision.GetComponent<Bot>();
+            Vector3 direction = (collision.transform.position - transform.position).normalized;
+            bot.TakeDamage(damage);
+            bot.PushBack(direction);
         }
+        OnHit();
     }
-    IEnumerator CollisionHanding()
+    protected virtual void OnHit()
     {
-        bulletHit.SetActive(true);
-        sprite.enabled = false;
-        yield return new WaitForSeconds(0.05f);
-        rb.velocity = Vector3.zero;
-        yield return new WaitForSeconds(0.25f);
-        gameObject.SetActive(false);
+
     }
 }

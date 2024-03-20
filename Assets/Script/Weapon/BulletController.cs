@@ -1,3 +1,4 @@
+using DG.Tweening;
 using MarchingBytes;
 using System;
 using System.Collections;
@@ -8,17 +9,18 @@ using TMPro;
 using UnityEngine;
 public class BulletController : Singleton<BulletController>
 {
+    public bool isDead = false;
     public int indexgun = 0;
     public float maxslashTime = 0.1f;
     private float firetime = 0;
     private float slashtime = 0;
-    private readonly List<string> listWeapon = new List<string>() { Constants.BULLETREVOLVER, Constants.BULLETREVOLVER, Constants.BULLETSHOTGUN, Constants.GREANDE, Constants.ROCKET};
+    private readonly List<string> listWeapon = new List<string>() { Constants.BULLETREVOLVER, Constants.BULLETREVOLVER, Constants.BULLETSHOTGUN, Constants.GRENADE, Constants.ROCKET};
     private readonly List<string> listSprite = new List<string>() { Constants.BULLETREVOLVERSPRTE, Constants.BULLETREVOLVERSPRTE, Constants.BULLETSHOTGUNSPRITE};
     private readonly List<int> numberofBullets = new List<int>() { 1, 1, 5, 1, 1 };
-    private readonly List<int> deflection = new List<int>() { 0, 5, 15, 0, 0 };
-    private readonly List<float> maxfireTime = new List<float> { 0.3f , 0.2f , 0.75f , 1f , 1f};
-    private readonly List<float> listForce = new List<float> { 5f, 5f, 5f, 3f, 3f };
-    private readonly List<float> flyTime = new List<float> { 0.5f, 0.5f, 0.18f, 1.2f, 1.2f };
+    private readonly List<int> deflection = new List<int>() { 0, 2, 15, 0, 0 };
+    private readonly List<float> maxfireTime = new List<float> { 0.15f , 0.1f , 0.75f , 1f , 1f};
+    private readonly List<float> listForce = new List<float> { 7f, 7f, 5f, 3f, 3f };
+    private readonly List<float> flyTime = new List<float> { 0.8f, 0.8f, 0.18f, 1.2f, 1.2f };
     [SerializeField] Transform firepos;
     [SerializeField] Transform _firepos;
     [SerializeField] Transform playerpos;
@@ -28,17 +30,16 @@ public class BulletController : Singleton<BulletController>
     {
         firetime += Time.deltaTime;
         slashtime += Time.deltaTime;
-        
+        if (isDead) return;
         if (Input.GetMouseButton(0) && firetime > maxfireTime[indexgun])
         {
             StartCoroutine(Fire());
-            
             firetime = 0;
         }
         if (Input.GetMouseButtonDown(1) && slashtime > maxslashTime)
         {
             StartCoroutine(Slash());
-            CameraFollower.Instance.CameraShake(0.0005f, 0.0005f);
+            CameraFollower.Instance.CameraShake(0.02f);
             slashtime = 0;
         }
     }
@@ -46,15 +47,15 @@ public class BulletController : Singleton<BulletController>
     {
         if (indexgun == 2)
         {
-            CameraFollower.Instance.CameraShake(0f, 0.02f);
+            CameraFollower.Instance.CameraShake(0.1f);
         }
-        //else if(indexgun == 0 || indexgun == 1)
-        //{
-        //   // CameraFollower.Instance.CameraShake(0f, 0.008f);
-        //}
+        else if (indexgun == 0 || indexgun == 1)
+        {
+            CameraFollower.Instance.CameraShake(0.01f);
+        }
         else if (indexgun == 3 || indexgun == 4)
         {
-            CameraFollower.Instance.CameraShake(0f, 0.04f);
+            CameraFollower.Instance.CameraShake(0.15f);
             yield return new WaitForSeconds(0.1f);
         }
         bulletparent.SetActive(true);
@@ -81,8 +82,8 @@ public class BulletController : Singleton<BulletController>
             Rigidbody2D rbtmp = bullettmp.GetComponent<Rigidbody2D>();
             rb.Add(rbtmp);
             Quaternion angle = Quaternion.Euler(0, 0, UnityEngine.Random.Range(-deflection[indexgun], deflection[indexgun]));
-            Vector2 shootDirect = angle * direct;
-            rb[i].AddForce(shootDirect * listForce[indexgun], ForceMode2D.Impulse);
+            Vector3 shootDirect = angle * direct;
+            rb[i].AddForce(shootDirect * listForce[indexgun],ForceMode2D.Impulse);
             yield return new WaitForSeconds(0.03f);
         }
         yield return new WaitForSeconds(flyTime[indexgun]);
@@ -105,37 +106,19 @@ public class BulletController : Singleton<BulletController>
                     bullet[i].SetActive(false);
                 }
             }
-            //else if (indexgun == 3)
-            //{
-            //    Grenade grenade = bullet[i].GetComponent<Grenade>();
-            //    if (!grenade.isHit) StartCoroutine(grenade.Boom());
-            //}
-            //else if (indexgun == 4)
-            //{
-            //    Rocket rocket = bullet[i].GetComponent<Rocket>();
-            //    while(firetime < flyTime[indexgun])
-            //    {
-            //        yield return null;
-            //    }
-            //    if (!rocket.isHit)
-            //    {
-            //        StartCoroutine(rocket.Boom());
-            //    } 
-            //}
         }
+        yield break;
     }
     IEnumerator Slash()
     {
         slash.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         slash.SetActive(false);
+        yield break;
     }
     IEnumerator Move(GameObject bullet,Vector3 destination)
     {
-        while (Vector3.Distance(bullet.transform.position, destination) > 0.01f)
-        {
-            bullet.transform.position = Vector3.MoveTowards(bullet.transform.position, destination,1.5f*Time.deltaTime);
-            yield return null;
-        }
+        bullet.transform.DOMove(destination,0.1f);
+        yield break;
     }
 }

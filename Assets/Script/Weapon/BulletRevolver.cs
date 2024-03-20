@@ -19,9 +19,11 @@ public class BulletRevolver : MonoBehaviour
     IEnumerator Appear()
     {
         yield return new WaitForSeconds(0.1f);
-        for(int i = 0; i < trail.Count; i++)
+        for(int i = trail.Count-1; i >= 0; i--)
         {
             trail[i].SetActive(true);
+            yield return new WaitForSeconds(0.02f);
         }
+        yield break;
     }
 }

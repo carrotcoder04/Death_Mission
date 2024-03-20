@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,7 +134,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Zombie Dead_strip8_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b667a7bed4470948ad750780bb58082
+      internalID: -1288136034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Dead_strip8_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 0
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18039765dc942c47aad4890e0614f4b
+      internalID: -26868002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Dead_strip8_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63abfd1e713a2e2449ef87d1808da3d5
+      internalID: -2032872955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Dead_strip8_3
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ee57951959d4db4a99895823ba85f69
+      internalID: 668589796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Dead_strip8_4
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3455457159995c246821879f4d546f84
+      internalID: -1838170872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Dead_strip8_5
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 0
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ae028a7b9df5b4eac18abe696870c1
+      internalID: 1289039920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Dead_strip8_6
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 284bc046701dcf24e852b0d30ef008ee
+      internalID: -1253925141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Dead_strip8_7
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 0
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d7d9f35c71269f44909888e4a0ac647
+      internalID: 28063133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +313,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Zombie Dead_strip8_0: -1288136034
+      Zombie Dead_strip8_1: -26868002
+      Zombie Dead_strip8_2: -2032872955
+      Zombie Dead_strip8_3: 668589796
+      Zombie Dead_strip8_4: -1838170872
+      Zombie Dead_strip8_5: 1289039920
+      Zombie Dead_strip8_6: -1253925141
+      Zombie Dead_strip8_7: 28063133
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
