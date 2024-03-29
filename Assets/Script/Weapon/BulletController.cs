@@ -1,11 +1,7 @@
 using DG.Tweening;
 using MarchingBytes;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.Sockets;
-using System.Threading.Tasks;
-using TMPro;
 using UnityEngine;
 public class BulletController : Singleton<BulletController>
 {
@@ -18,9 +14,9 @@ public class BulletController : Singleton<BulletController>
     private readonly List<string> listSprite = new List<string>() { Constants.BULLETREVOLVERSPRTE, Constants.BULLETREVOLVERSPRTE, Constants.BULLETSHOTGUNSPRITE};
     private readonly List<int> numberofBullets = new List<int>() { 1, 1, 5, 1, 1 };
     private readonly List<int> deflection = new List<int>() { 0, 2, 15, 0, 0 };
-    private readonly List<float> maxfireTime = new List<float> { 0.15f , 0.1f , 0.75f , 1f , 1f};
-    private readonly List<float> listForce = new List<float> { 7f, 7f, 5f, 3f, 3f };
-    private readonly List<float> flyTime = new List<float> { 0.8f, 0.8f, 0.18f, 1.2f, 1.2f };
+    private readonly List<float> maxfireTime = new List<float> { 0.25f , 0.2f , 0.75f , 1f , 1f};
+    private readonly List<float> listForce = new List<float> { 6f,5f, 5f, 3f, 3f };
+    private readonly List<float> flyTime = new List<float> { 0.5f, 0.6f, 0.18f, 1.2f, 1.2f };
     [SerializeField] Transform firepos;
     [SerializeField] Transform _firepos;
     [SerializeField] Transform playerpos;
@@ -33,14 +29,18 @@ public class BulletController : Singleton<BulletController>
         if (isDead) return;
         if (Input.GetMouseButton(0) && firetime > maxfireTime[indexgun])
         {
-            StartCoroutine(Fire());
-            firetime = 0;
+            if (UIManager.Instance.ammo[indexgun] > 0)
+            {
+                Actions.Fire?.Invoke();
+                StartCoroutine(Fire());
+                firetime = 0;
+            }
         }
         if (Input.GetMouseButtonDown(1) && slashtime > maxslashTime)
         {
+            slashtime = 0;
             StartCoroutine(Slash());
             CameraFollower.Instance.CameraShake(0.02f);
-            slashtime = 0;
         }
     }
     IEnumerator Fire()
@@ -86,7 +86,52 @@ public class BulletController : Singleton<BulletController>
             rb[i].AddForce(shootDirect * listForce[indexgun],ForceMode2D.Impulse);
             yield return new WaitForSeconds(0.03f);
         }
-        yield return new WaitForSeconds(flyTime[indexgun]);
+        if (indexgun == 2) yield return new WaitForSeconds(flyTime[indexgun]);
+        else if (indexgun == 0 || indexgun == 1)
+        {
+            float time = 0;
+            BulletRevolverHit bulletRevolverHit = bullet[0].GetComponent<BulletRevolverHit>();
+            while(time < flyTime[indexgun])
+            {
+                time += Time.deltaTime;
+                if (bulletRevolverHit.isHit)
+                {
+                    bulletparent.SetActive(false);
+                    yield break;
+                }
+                yield return null;
+            }
+        }
+        else if(indexgun == 3)
+        {
+            float time = 0;
+            Grenade grenade = bullet[0].GetComponent<Grenade>();
+            while (time < flyTime[indexgun])
+            {
+                time += Time.deltaTime;
+                if (grenade.isHit)
+                {
+                    bulletparent.SetActive(false);
+                    yield break;
+                }
+                yield return null;
+            }
+        }
+        else if (indexgun == 4)
+        {
+            float time = 0;
+            Rocket rocket = bullet[0].GetComponent<Rocket>();
+            while (time < flyTime[indexgun])
+            {
+                time += Time.deltaTime;
+                if (rocket.isHit)
+                {
+                    bulletparent.SetActive(false);
+                    yield break;
+                }
+                yield return null;
+            }
+        }
         bulletparent.SetActive(false);
         for (int i = 0; i < numberofBullets[indexgun]; i++)
         {

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class GameController : Singleton<GameController>
 {
     [SerializeField] List<GameObject> sceen = new List<GameObject>();
-    [SerializeField] GameObject player;
+    [SerializeField] GameObject playerGO;
     [SerializeField] Transform cam;
     [SerializeField] GameObject loading;
     [SerializeField] GameObject tittle;
@@ -78,10 +78,10 @@ public class GameController : Singleton<GameController>
         fade.alpha = 0;
         lock (cam)
         {
-            lock(player.transform)
+            lock(playerGO.transform)
             {
                 loading.SetActive(true);
-                player.transform.position = sceen[id].transform.position;
+                playerGO.transform.position = sceen[id].transform.position;
                 cam.transform.position = sceen[id].transform.position + new Vector3(0,0,-10);
                 yield return new WaitForSeconds(0.5f);
                 loading.SetActive(false);

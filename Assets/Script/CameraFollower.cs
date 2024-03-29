@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using DG.Tweening;
 public class CameraFollower : Singleton<CameraFollower>

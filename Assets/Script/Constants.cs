@@ -7,4 +7,7 @@ public static class Constants
     public const string GRENADE = "Grenade";
     public const string BULLETSHOTGUNSPRITE = "BulletShotgunSprite";
     public const string ZOMBIE = "Zombie";
+    public const string AMMMOCHESS = "AmmoChess";
+    public const string LIFECHESS = "LifeChess";
+    public const string GOLDCHESS = "GoldChess";
 }

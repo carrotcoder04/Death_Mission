@@ -78,5 +78,6 @@ public class Player : Character
     protected override void OnHurting(float damage)
     {
         base.OnHurting(damage);
+        Actions.HPChange.Invoke();
     }
 }

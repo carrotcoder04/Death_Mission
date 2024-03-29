@@ -1,14 +1,11 @@
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-
 public class Character : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     private Rigidbody2D rb;
     private string currentAnim;
-    protected float maxHp;
-    protected float currentHp;
+    public float maxHp;
+    public float currentHp;
     protected bool isHurting = false;
     private float pushForce = 0.05f;
     protected bool isDead = false;

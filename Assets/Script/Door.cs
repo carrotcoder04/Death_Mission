@@ -35,7 +35,7 @@ public class Door : MonoBehaviour
     IEnumerator Opening()
     {
         animator.SetTrigger(opening);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         door.SetActive(false);
         yield break;
     }

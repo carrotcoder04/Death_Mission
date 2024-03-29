@@ -38,6 +38,7 @@ public class WeaponController : MonoBehaviour
             isChoosing = false;
             gun.sprite = spritesGun[index];
             BulletController.Instance.indexgun = index;
+            Actions.ChangeWeapon?.Invoke(index);
             chooseWeapon.SetActive(false);
         }
     }
