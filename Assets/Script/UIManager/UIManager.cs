@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
-    [SerializeField] Button start;
     [SerializeField] Image weaponRenderer;
     [SerializeField] TextMeshProUGUI ammoTxt;
     [SerializeField] TextMeshProUGUI goldTxt;
@@ -25,18 +24,12 @@ public class UIManager : Singleton<UIManager>
         ammo.Add(200);
         ammo.Add(123);
         ammoTxt.text = ammo[indexgun].ToString();
-        start.onClick.AddListener(() => Play());
     }
 
     private void OnChangeGold(int gold)
     {
         GameController2.Instance.totalgold += gold;
         goldTxt.text = GameController2.Instance.totalgold.ToString();
-    }
-
-    void Play()
-    {
-        GameController.Instance.Play();
     }
     void ChangeWeapon(int index)
     {
