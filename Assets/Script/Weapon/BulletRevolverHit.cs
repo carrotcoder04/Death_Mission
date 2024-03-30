@@ -32,7 +32,7 @@ public class BulletRevolverHit : Bullet
     IEnumerator CollisionHandling()
     {
         bulletHit.SetActive(true);
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.02f);
         sprite.enabled = false;
         rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(0.25f);
