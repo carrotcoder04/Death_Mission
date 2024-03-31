@@ -316,6 +316,7 @@ Transform:
   - {fileID: 6192475067506319012}
   - {fileID: 6280178247920913608}
   - {fileID: 4621467137388702245}
+  - {fileID: 7706737152362989272}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4256984414084561458
@@ -332,6 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5982574950154712796}
   door: {fileID: 1768552909311482955}
+  room: {fileID: 7706737152362989272}
 --- !u!61 &6811887544023233733
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -377,6 +379,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.107709885, y: 0.9716091}
   m_EdgeRadius: 0
+--- !u!1 &6381569090061640742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7706737152362989272}
+  m_Layer: 3
+  m_Name: Room
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7706737152362989272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6381569090061640742}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.54, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7548642301261039829}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8834261594727664790
 GameObject:
   m_ObjectHideFlags: 0

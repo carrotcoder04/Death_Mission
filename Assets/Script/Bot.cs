@@ -14,6 +14,7 @@ public class Bot : Character
     public Transform target;
     public SpriteRenderer spriteRenderer;
     public Path path;
+    public float distance = 2.5f;
     public bool isinRange = false;
     private void OnDisable()
     {
@@ -34,7 +35,7 @@ public class Bot : Character
         if(!isDead)
         {
             float distance = Vector2.Distance(transform.position, target.position);
-            if (distance < 4f)
+            if (distance < this.distance)
             {
                 if (distance < 0.2f)
                 {

@@ -6,6 +6,7 @@ public class Door : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject door;
+    [SerializeField] private Transform room;
     string opening = "Opening";
     string closing = "Closing";
     private bool isOpen = false;
@@ -41,7 +42,6 @@ public class Door : MonoBehaviour
     }
     IEnumerator Closing()
     {
-        yield return new WaitForSeconds(4f);
         if(isOpen)
         {
             yield return StartCoroutine(Closing());
@@ -53,5 +53,6 @@ public class Door : MonoBehaviour
             animator.SetTrigger(closing);
             StopAllCoroutines();
         }
+        yield break;
     }
 }

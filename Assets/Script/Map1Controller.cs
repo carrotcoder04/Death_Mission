@@ -73,4 +73,11 @@ public class Map1Controller : Singleton<Map1Controller>
         Bot bot = botclone.GetComponent<Bot>();
         botlist.Add(bot);
     }
+    public void SetDistance(float distance)
+    {
+        foreach(var bot in botlist)
+        {
+            bot.distance = distance;
+        }
+    }
 }

@@ -10,6 +10,7 @@ public class GateLobby : MonoBehaviour
         if(collision.tag == "Player")
         {
             GameController.Instance.LoadSceen(1);
+            UIManager.Instance.StartCounter();
         }
     }
 }

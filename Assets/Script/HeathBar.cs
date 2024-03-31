@@ -8,13 +8,10 @@ public class HeathBar : Singleton<HeathBar>
     [SerializeField] List<Sprite> hp;
     [SerializeField] Player player;
     [SerializeField] SpriteRenderer hudRenderer,hpRenderer;
-    private void OnEnable()
-    {
-        StartCoroutine(HpUpdate());
-    }
     private void Start()
     {
         Actions.HPChange += OnHPChange;
+        StartCoroutine(HpUpdate());
     }
     private void OnHPChange()
     {

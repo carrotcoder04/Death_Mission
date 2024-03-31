@@ -25,7 +25,7 @@ public class CameraFollower : Singleton<CameraFollower>
         weaponTF.rotation = rotation;
         if (distance < 2.4f)
         {
-            TF.position = Vector3.Lerp(TF.position, worldPosition + offset, Time.deltaTime * 0.6f);
+            TF.position = Vector3.Lerp(TF.position, worldPosition + offset, Time.deltaTime * 0.8f);
         }
         if (worldPosition.x < playerTF.position.x)
         {
