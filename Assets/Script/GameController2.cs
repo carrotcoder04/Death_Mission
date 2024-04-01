@@ -13,7 +13,7 @@ public class GameController2 : Singleton<GameController2>
         Actions.PickLifeChess += IncreaseHP;
         Actions.PickGoldChess += IncreaseGold;
         Actions.PickAmmoChess += IncreaseAmmo;
-        Actions.killbot += KillBot;
+        Actions.KillBot += KillBot;
     }
 
     private void IncreaseAmmo(int ammo)

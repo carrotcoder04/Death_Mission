@@ -87,7 +87,7 @@ public class Bot : Character
     }
     protected override void OnDeath()
     {
-        Actions.killbot.Invoke(this);
+        Actions.KillBot.Invoke(this);
         base.OnDeath();
         ChangeState(new DeathState());
     }

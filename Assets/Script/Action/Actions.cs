@@ -2,8 +2,9 @@ using UnityEngine.Events;
 
 public static class Actions
 {
-    public static UnityAction<Bot> killbot;
+    public static UnityAction<Bot> KillBot;
     public static UnityAction HPChange;
+    public static UnityAction GoIntotTheGate;
     public static UnityAction<int> PickGoldChess;
     public static UnityAction PickLifeChess;
     public static UnityAction<int> PickAmmoChess;

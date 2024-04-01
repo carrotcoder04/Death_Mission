@@ -10,7 +10,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] Image weaponRenderer;
     [SerializeField] TextMeshProUGUI ammoTxt;
     [SerializeField] TextMeshProUGUI goldTxt;
-    [SerializeField] TextMeshProUGUI timeTxt;
+    [SerializeField] public TextMeshProUGUI timeTxt;
     [SerializeField] List<Sprite> weaponSprite = new List<Sprite>();
     public List<int> ammo = new List<int>();
     int indexgun = 0;

@@ -7,8 +7,10 @@ public class Map1Controller : Singleton<Map1Controller>
 {
     [SerializeField] Transform rd1x,rd2x,rd3x,rd1y,rd2y,rd3y,rd4y;
     List<Bot> botlist = new List<Bot>();
+    public bool isWin = false;
     public int botcount;
     public int maxbot;
+    int totalkill = 0;
     public Transform playerTF;
     float x1;
     float x2;
@@ -19,7 +21,7 @@ public class Map1Controller : Singleton<Map1Controller>
     float y4;
     void Start()
     {
-        Actions.killbot += KillBot;
+        Actions.KillBot += KillBot;
         Invoke(nameof(OnInit),1f);
         x1 = rd1x.position.x;
         x2 = rd2x.position.x;
@@ -36,14 +38,16 @@ public class Map1Controller : Singleton<Map1Controller>
     }
     void KillBot(Bot bot)
     {
+        totalkill++;
         botlist.Remove(bot);
         if (botcount < maxbot)
         {
+            botcount += 1;
             Invoke(nameof(Born2), 5f);
         }
-        else if (botcount >= maxbot)
+        if(totalkill >= maxbot)
         {
-
+            isWin = true;
         }
     }
     void Born1(int botCount)
